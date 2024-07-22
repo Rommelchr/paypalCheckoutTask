@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout page</title>
+    <style>
+        .error {
+            border: 1px solid red;
+        }
+        #error-message {
+            color: red;
+            display: none;
+        }        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        #product1,#product2,#buyer-info {
+            background: #fff;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+        }
+        #buyer-info form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        #buyer-info form input {
+            flex: 1 1 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        #paypal-button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Shopping Cart</h1>
+    <div id="product1" class="product" data-sku="1" data-price="1.00">
+        <h2>Product Name: Paper</h2>
+        <p>SKU: 1</p>
+        <p>Price: $1.00</p>
+    </div>
+    <div id="product2" class="product" data-sku="2" data-price="2.00">
+        <h2>Product Name: Spoon</h2>
+        <p>SKU: 2</p>
+        <p>Price: $2.00</p>
+    </div>
+    <div id="buyer-info">
+        <div id="error-message">*Please fill out all required fields.</div>
+        <h2>Buyer Information</h2>
+        <form id="buyer-form">
+            <input type="text" name="first_name" placeholder="First Name" required>
+            <input type="text" name="last_name" placeholder="Last Name" required>
+            <input type="email" name="email" placeholder="Email" value="sb-7znzq31814589@personal.example.com" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <input type="text" name="address1" placeholder="Address Line 1" value=" 2nd Main St. San Diego" required>
+            <input type="text" name="address2" placeholder="Address Line 2 (optional)">
+            <input type="text" name="state" placeholder="State" value="CA" required>
+            <input type="text" name="zip" placeholder="Zip Code" value="92113" required>
+            <input type="text" name="country" placeholder="Country" value="US" required>
+        </form>
+    </div>
+    <div id="paypal-button-container"></div>
+    <script src="https://www.paypal.com/sdk/js?client-id=Abz4KfTZBnAjBV0vcmy1S2A8kHwDX3ww1uN7pCGO7zaGcPrFUwLITAxJgcFVEY_tRKEqrBy9SoP4b521"></script>
+    <script src="app.js"></script>
+</body>
+</html>
